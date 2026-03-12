@@ -1,0 +1,243 @@
+---
+---
+
+<section id="contact" class="contact">
+	<div class="contact-inner">
+		<div class="contact-header fade-in">
+			<div class="section-label">
+				<span class="label-line"></span>
+				<span class="label-text" data-i18n="nav.contact">Contact</span>
+				<span class="label-line"></span>
+			</div>
+			<h2 data-i18n="contact.title">Get in Touch</h2>
+			<p class="contact-subtitle" data-i18n="contact.subtitle">There's a quiet charm to handwritten notes...</p>
+		</div>
+
+		<form class="contact-form fade-in" action="mailto:info@henrycalligraphy.com" method="post" enctype="text/plain">
+			<!-- Row: Name + Email -->
+			<div class="form-row">
+				<div class="form-group">
+					<label data-i18n="contact.nameLabel">Name</label>
+					<input type="text" name="name" required data-i18n="contact.name" placeholder="Your Name" />
+				</div>
+				<div class="form-group">
+					<label data-i18n="contact.emailLabel">Email</label>
+					<input type="email" name="email" required data-i18n="contact.email" placeholder="Your Email" />
+				</div>
+			</div>
+
+			<!-- Row: Phone + Event Date -->
+			<div class="form-row">
+				<div class="form-group">
+					<label data-i18n="contact.phoneLabel">Phone (optional)</label>
+					<input type="tel" name="phone" data-i18n="contact.phone" placeholder="+31 6 1234 5678" />
+				</div>
+				<div class="form-group">
+					<label data-i18n="contact.dateLabel">Event Date</label>
+					<input type="date" name="event_date" />
+				</div>
+			</div>
+
+			<!-- Service Type -->
+			<div class="form-group">
+				<label data-i18n="contact.serviceLabel">What service are you interested in?</label>
+				<select name="service" required>
+					<option value="" disabled selected data-i18n="contact.servicePlaceholder">Select a service...</option>
+					<option value="live" data-i18n="contact.serviceLive">Live Calligraphy at Location</option>
+					<option value="placecards" data-i18n="contact.servicePlacecards">Placecards</option>
+					<option value="envelopes" data-i18n="contact.serviceEnvelopes">Envelopes</option>
+					<option value="wedding" data-i18n="contact.serviceWedding">Wedding Menu / Vows</option>
+					<option value="certificate" data-i18n="contact.serviceCertificate">Diploma / Certificate</option>
+					<option value="other" data-i18n="contact.serviceOther">Other / Not Sure Yet</option>
+				</select>
+			</div>
+
+			<!-- Event Type -->
+			<div class="form-group">
+				<label data-i18n="contact.eventLabel">What is the occasion?</label>
+				<select name="event_type">
+					<option value="" disabled selected data-i18n="contact.eventPlaceholder">Select an occasion (optional)...</option>
+					<option value="wedding" data-i18n="contact.eventWedding">Wedding</option>
+					<option value="corporate" data-i18n="contact.eventCorporate">Corporate Event</option>
+					<option value="gala" data-i18n="contact.eventGala">Gala / Dinner</option>
+					<option value="branding" data-i18n="contact.eventBranding">Brand Activation</option>
+					<option value="personal" data-i18n="contact.eventPersonal">Personal / Gift</option>
+					<option value="other" data-i18n="contact.eventOther">Other</option>
+				</select>
+			</div>
+
+			<!-- Estimated Guests / Pieces -->
+			<div class="form-group">
+				<label data-i18n="contact.quantityLabel">Estimated number of pieces</label>
+				<input type="text" name="quantity" data-i18n="contact.quantity" placeholder="e.g. 80 placecards" />
+			</div>
+
+			<!-- Message -->
+			<div class="form-group">
+				<label data-i18n="contact.messageLabel">Tell me more about your vision</label>
+				<textarea name="message" rows="4" data-i18n="contact.message" placeholder="Your Message"></textarea>
+			</div>
+
+			<button type="submit" class="submit-btn" data-i18n="contact.send">Send Inquiry</button>
+		</form>
+	</div>
+</section>
+
+<style>
+	.contact {
+		padding: var(--section-padding);
+		background-color: var(--color-walnut);
+		color: var(--color-ivory);
+	}
+
+	.contact-inner {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+
+	.contact-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.section-label {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.label-line {
+		width: 40px;
+		height: 1px;
+		background-color: rgba(250, 248, 245, 0.4);
+	}
+
+	.label-text {
+		font-family: var(--font-body);
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		color: rgba(250, 248, 245, 0.7);
+	}
+
+	h2 {
+		font-size: clamp(2rem, 4vw, 3rem);
+		color: var(--color-ivory);
+		margin: 0.5rem 0 0.75rem;
+	}
+
+	.contact-subtitle {
+		font-style: italic;
+		color: rgba(250, 248, 245, 0.7);
+		font-size: 1.05rem;
+		margin: 0;
+	}
+
+	.contact-form {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.form-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.25rem;
+	}
+
+	.form-group label {
+		display: block;
+		font-family: var(--font-body);
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: rgba(250, 248, 245, 0.6);
+		margin-bottom: 0.5rem;
+	}
+
+	.form-group input,
+	.form-group textarea,
+	.form-group select {
+		width: 100%;
+		padding: 0.9rem 1.1rem;
+		background-color: rgba(250, 248, 245, 0.08);
+		border: 1px solid rgba(250, 248, 245, 0.2);
+		border-radius: 2px;
+		color: var(--color-ivory);
+		font-family: var(--font-body);
+		font-size: 0.92rem;
+		transition: border-color var(--transition-base), background-color var(--transition-base);
+	}
+
+	.form-group select {
+		appearance: none;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(250,248,245,0.5)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: right 1rem center;
+		padding-right: 2.5rem;
+		cursor: pointer;
+	}
+
+	.form-group select option {
+		background-color: var(--color-walnut-dark);
+		color: var(--color-ivory);
+	}
+
+	.form-group input::placeholder,
+	.form-group textarea::placeholder {
+		color: rgba(250, 248, 245, 0.35);
+	}
+
+	.form-group input:focus,
+	.form-group textarea:focus,
+	.form-group select:focus {
+		outline: none;
+		border-color: rgba(250, 248, 245, 0.5);
+		background-color: rgba(250, 248, 245, 0.12);
+	}
+
+	.form-group textarea {
+		resize: vertical;
+		min-height: 100px;
+	}
+
+	/* Date input styling for dark bg */
+	.form-group input[type="date"] {
+		cursor: pointer;
+	}
+
+	.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+		filter: invert(0.9);
+		cursor: pointer;
+	}
+
+	.submit-btn {
+		align-self: center;
+		padding: 0.9rem 2.5rem;
+		background-color: var(--color-ivory);
+		color: var(--color-walnut);
+		border: 1px solid transparent;
+		font-family: var(--font-body);
+		font-size: 0.85rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		cursor: pointer;
+		margin-top: 0.5rem;
+		transition: background-color var(--transition-base), color var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
+	}
+
+	.submit-btn:hover {
+		background-color: var(--color-walnut-dark);
+		color: var(--color-ivory);
+		border-color: var(--color-ivory);
+		transform: translateY(-2px);
+	}
+
+	@media (max-width: 600px) {
+		.form-row {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

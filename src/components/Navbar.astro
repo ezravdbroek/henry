@@ -1,0 +1,222 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+---
+
+<nav class="navbar" id="navbar">
+	<div class="navbar-inner">
+		<a href="#" class="logo-link">
+			<Image src={logo} alt="Henry Calligraphy" height={45} class="logo" />
+		</a>
+
+		<button class="hamburger" id="hamburger" aria-label="Toggle menu">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+				<line x1="3" y1="6" x2="21" y2="6" class="line-top" />
+				<line x1="3" y1="12" x2="21" y2="12" class="line-mid" />
+				<line x1="3" y1="18" x2="21" y2="18" class="line-bot" />
+			</svg>
+		</button>
+
+		<div class="nav-links" id="nav-links">
+			<a href="#about" data-i18n="nav.about">About Me</a>
+			<a href="#services" data-i18n="nav.services">Services</a>
+			<a href="#calligraphy" data-i18n="nav.calligraphy">What is Calligraphy?</a>
+			<a href="#contact" data-i18n="nav.contact">Contact</a>
+		</div>
+
+		<div class="lang-toggle">
+			<button data-lang-btn="en" class="lang-btn active" onclick="setLang('en')">EN</button>
+			<span class="lang-divider">|</span>
+			<button data-lang-btn="nl" class="lang-btn" onclick="setLang('nl')">NL</button>
+		</div>
+	</div>
+</nav>
+
+<script>
+	const navbar = document.getElementById('navbar');
+	const hamburger = document.getElementById('hamburger');
+	const navLinks = document.getElementById('nav-links');
+
+	window.addEventListener('scroll', () => {
+		navbar?.classList.toggle('scrolled', window.scrollY > 50);
+	});
+
+	hamburger?.addEventListener('click', () => {
+		navLinks?.classList.toggle('open');
+		hamburger.classList.toggle('open');
+	});
+
+	navLinks?.querySelectorAll('a').forEach(link => {
+		link.addEventListener('click', () => {
+			navLinks.classList.remove('open');
+			hamburger?.classList.remove('open');
+		});
+	});
+</script>
+
+<style>
+	.navbar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1000;
+		padding: 1rem 2rem;
+		transition: background-color var(--transition-base), box-shadow var(--transition-base);
+	}
+
+	.navbar.scrolled {
+		background-color: rgba(250, 248, 245, 0.95);
+		backdrop-filter: blur(10px);
+		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.06);
+	}
+
+	.navbar-inner {
+		max-width: var(--max-content);
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.logo-link {
+		flex-shrink: 0;
+	}
+
+	.logo {
+		height: 45px;
+		width: auto;
+		object-fit: contain;
+	}
+
+	.nav-links {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+	}
+
+	.nav-links a {
+		font-family: var(--font-body);
+		font-size: 0.85rem;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: var(--color-walnut);
+		position: relative;
+		padding-bottom: 2px;
+	}
+
+	.navbar:not(.scrolled) .nav-links a {
+		color: #fff;
+	}
+
+	.nav-links a::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 1px;
+		background-color: currentColor;
+		transition: width var(--transition-base);
+	}
+
+	.nav-links a:hover::after {
+		width: 100%;
+	}
+
+	.lang-toggle {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+	}
+
+	.lang-btn {
+		background: none;
+		border: none;
+		font-family: var(--font-body);
+		font-size: 0.8rem;
+		letter-spacing: 0.05em;
+		cursor: pointer;
+		color: var(--color-text-light);
+		padding: 0.25rem 0.4rem;
+		transition: color var(--transition-base);
+	}
+
+	.navbar:not(.scrolled) .lang-btn {
+		color: rgba(255, 255, 255, 0.6);
+	}
+
+	.navbar:not(.scrolled) .lang-btn.active {
+		color: #fff;
+	}
+
+	.lang-btn.active {
+		color: var(--color-walnut);
+		font-weight: 500;
+	}
+
+	.lang-divider {
+		color: var(--color-text-light);
+		font-size: 0.75rem;
+	}
+
+	.navbar:not(.scrolled) .lang-divider {
+		color: rgba(255, 255, 255, 0.4);
+	}
+
+	.hamburger {
+		display: none;
+		background: none;
+		border: none;
+		cursor: pointer;
+		color: var(--color-walnut);
+		padding: 0.5rem;
+	}
+
+	.navbar:not(.scrolled) .hamburger {
+		color: #fff;
+	}
+
+	@media (max-width: 768px) {
+		.navbar-inner {
+			flex-wrap: wrap;
+		}
+
+		.hamburger {
+			display: block;
+			order: 3;
+		}
+
+		.lang-toggle {
+			order: 2;
+			margin-left: auto;
+			margin-right: 0.75rem;
+		}
+
+		.nav-links {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			flex-direction: column;
+			background-color: rgba(250, 248, 245, 0.98);
+			backdrop-filter: blur(10px);
+			padding: 1.5rem 2rem;
+			gap: 1.2rem;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+		}
+
+		.nav-links.open {
+			display: flex;
+		}
+
+		.nav-links a {
+			color: var(--color-walnut) !important;
+		}
+
+		.navbar {
+			padding: 0.75rem 1.5rem;
+		}
+	}
+</style>

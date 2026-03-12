@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /c/Users/shaba/Desktop/projecten/henry log --oneline | head -10)",
+      "Bash(find \"C:\\\\Users\\\\shaba\\\\Desktop\\\\projecten\\\\henry\" -type f \\\\\\( -iname \"*.jpg\" -o -iname \"*.jpeg\" -o -iname \"*.png\" -o -iname \"*.gif\" -o -iname \"*.svg\" -o -iname \"*.webp\" -o -iname \"*.ico\" -o -iname \"*.mp4\" -o -iname \"*.webm\" -o -iname \"*.mov\" -o -iname \"*.avi\" \\\\\\) 2>/dev/null | head -100)",
+      "Bash(find \"C:\\\\Users\\\\shaba\\\\Desktop\\\\projecten\\\\henry\" -type f \\\\\\( -iname \"*.jpg\" -o -iname \"*.jpeg\" -o -iname \"*.png\" -o -iname \"*.gif\" -o -iname \"*.svg\" -o -iname \"*.webp\" -o -iname \"*.ico\" -o -iname \"*.mp4\" -o -iname \"*.webm\" -o -iname \"*.mov\" -o -iname \"*.avi\" \\\\\\) 2>/dev/null | sort)",
+      "WebFetch(domain:weblium.com)",
+      "Bash(ls -lh C:/Users/shaba/Desktop/projecten/henry/src/assets/logo.*)",
+      "Bash(ls -lh C:/Users/shaba/Desktop/projecten/henry/public/foto* C:/Users/shaba/Desktop/projecten/henry/public/hero.mp4)",
+      "Bash(cd C:/Users/shaba/Desktop/projecten/henry && npm run dev)",
+      "Bash(cd \"C:\\\\Users\\\\shaba\\\\Desktop\\\\projecten\\\\henry\" && npm run build 2>&1)",
+      "WebFetch(domain:localhost)",
+      "Bash(cd \"C:\\\\Users\\\\shaba\\\\Desktop\\\\projecten\\\\henry\" && npm run build 2>&1 && cat dist/index.html)"
+    ]
+  }
+}

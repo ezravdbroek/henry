@@ -1,0 +1,201 @@
+---
+---
+
+<section id="about" class="about">
+	<div class="about-inner">
+		<div class="about-image fade-in">
+			<img src="/foto3.jpg" alt="Isha Henry-Hament writing calligraphy" loading="lazy" />
+		</div>
+		<div class="about-text fade-in">
+			<div class="section-label">
+				<span class="label-line"></span>
+				<span class="label-text" data-i18n="nav.about">About Me</span>
+			</div>
+			<h2 data-i18n="about.title">About Me</h2>
+			<p class="about-intro" data-i18n="about.intro">My name is Isha Henry-Hament, a 31 year young professional calligrapher. The name Henry Calligraphy derives from our little family name. I am based in Breda, the Netherlands.</p>
+			<p class="about-body" data-i18n="about.body">I'm a young mother, ex-politician, corporate girl who rediscovered her passion for arts and crafts. Through handlettering I am able to express myself, through my love for words and art.</p>
+		</div>
+	</div>
+
+	<div class="about-stats fade-in">
+		<div class="stat">
+			<span class="stat-value" data-i18n="about.stat1value">10+</span>
+			<span class="stat-label" data-i18n="about.stat1label">Years in Sales & Business Development</span>
+		</div>
+		<div class="stat">
+			<span class="stat-value" data-i18n="about.stat2value">4</span>
+			<span class="stat-label" data-i18n="about.stat2label">Countries Lived & Worked</span>
+		</div>
+		<div class="stat">
+			<span class="stat-value" data-i18n="about.stat3value">MSc</span>
+			<span class="stat-label" data-i18n="about.stat3label">International Relations & Diplomacy</span>
+		</div>
+		<div class="stat">
+			<span class="stat-value" data-i18n="about.stat4value">2</span>
+			<span class="stat-label" data-i18n="about.stat4label">Languages besides Dutch & English</span>
+		</div>
+	</div>
+
+	<div class="about-quote fade-in">
+		<blockquote>
+			<svg class="quote-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path></svg>
+			<p data-i18n="about.quote">Words matter, your message matters, and the way in which you convey your message; matters.</p>
+		</blockquote>
+		<p class="about-closing" data-i18n="about.closing">As AI and digitalization continue to reshape our world, the desire for handmade creations is increasing. I practice Copperplate Calligraphy. And I would like to share my passion for attention to detail and handlettering with the world.</p>
+	</div>
+</section>
+
+<style>
+	.about {
+		padding: var(--section-padding);
+		background-color: var(--color-ivory);
+	}
+
+	.about-inner {
+		max-width: var(--max-content);
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: clamp(2rem, 5vw, 5rem);
+		align-items: start;
+	}
+
+	.about-image img {
+		width: 100%;
+		height: 480px;
+		object-fit: cover;
+		border-radius: 2px;
+	}
+
+	.section-label {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.label-line {
+		width: 40px;
+		height: 1px;
+		background-color: var(--color-walnut);
+	}
+
+	.label-text {
+		font-family: var(--font-body);
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		color: var(--color-text-light);
+	}
+
+	h2 {
+		font-size: clamp(2rem, 4vw, 3rem);
+		margin: 0.5rem 0 1.5rem;
+	}
+
+	.about-intro {
+		font-size: 0.95rem;
+		color: var(--color-text);
+		line-height: 1.8;
+		margin: 0 0 1rem;
+	}
+
+	.about-body {
+		font-size: 0.95rem;
+		color: var(--color-text);
+		line-height: 1.8;
+		margin: 0;
+	}
+
+	/* Stats row */
+	.about-stats {
+		max-width: var(--max-content);
+		margin: 3rem auto 0;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 2rem;
+		padding-top: 3rem;
+		border-top: 1px solid rgba(92, 64, 51, 0.12);
+	}
+
+	.stat {
+		text-align: center;
+	}
+
+	.stat-value {
+		display: block;
+		font-family: var(--font-heading);
+		font-size: clamp(2rem, 3vw, 2.75rem);
+		font-weight: 500;
+		color: var(--color-walnut);
+		line-height: 1.1;
+		margin-bottom: 0.5rem;
+	}
+
+	.stat-label {
+		display: block;
+		font-size: 0.8rem;
+		color: var(--color-text-light);
+		line-height: 1.4;
+		letter-spacing: 0.02em;
+	}
+
+	/* Pull-quote */
+	.about-quote {
+		max-width: 800px;
+		margin: 2.5rem auto 0;
+		padding-top: 2.5rem;
+		text-align: center;
+	}
+
+	blockquote {
+		margin: 0 0 1.5rem;
+		padding: 0;
+	}
+
+	.quote-icon {
+		width: 28px;
+		height: 28px;
+		color: var(--color-walnut);
+		opacity: 0.3;
+		margin-bottom: 1rem;
+	}
+
+	blockquote p {
+		font-family: var(--font-heading);
+		font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+		font-style: italic;
+		font-weight: 400;
+		color: var(--color-walnut);
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	.about-closing {
+		font-size: 0.95rem;
+		color: var(--color-text);
+		line-height: 1.8;
+		margin: 0;
+	}
+
+	@media (max-width: 768px) {
+		.about-inner {
+			grid-template-columns: 1fr;
+		}
+
+		.about-image img {
+			height: 350px;
+		}
+
+		.about-stats {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1.5rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.about-stats {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

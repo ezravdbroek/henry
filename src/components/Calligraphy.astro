@@ -1,0 +1,178 @@
+---
+---
+
+<section id="calligraphy" class="calligraphy">
+	<div class="calligraphy-inner">
+		<div class="calligraphy-text fade-in">
+			<div class="section-label">
+				<span class="label-line"></span>
+				<span class="label-text" data-i18n="calligraphy.label">The Art</span>
+			</div>
+			<h2 data-i18n="calligraphy.title">What is Copperplate Calligraphy?</h2>
+			<p class="calligraphy-intro" data-i18n="calligraphy.intro">Copperplate Calligraphy is a style of writing known for its elegant, flowing and highly structured script. It became popular in 18th Century England.</p>
+		</div>
+		<div class="calligraphy-image fade-in">
+			<img src="/foto2.jpg" alt="Close-up of a fountain pen writing calligraphy" loading="lazy" />
+		</div>
+	</div>
+
+	<div class="features-row fade-in">
+		<div class="feature-card">
+			<div class="feature-icon">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
+			</div>
+			<h3 data-i18n="calligraphy.feat1title">Oblique Penholder</h3>
+			<p data-i18n="calligraphy.feat1text">Practiced with a specialized angled holder and pointed nib for precise control</p>
+		</div>
+		<div class="feature-card">
+			<div class="feature-icon">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/><path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"/></svg>
+			</div>
+			<h3 data-i18n="calligraphy.feat2title">Contrast & Flow</h3>
+			<p data-i18n="calligraphy.feat2text">Thin upstrokes and thick downstrokes create its distinctive, refined appearance</p>
+		</div>
+		<div class="feature-card">
+			<div class="feature-icon">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+			</div>
+			<h3 data-i18n="calligraphy.feat3title">Timeless Craft</h3>
+			<p data-i18n="calligraphy.feat3text">One of the most admired and practiced forms of calligraphy in the world today</p>
+		</div>
+	</div>
+</section>
+
+<style>
+	.calligraphy {
+		padding: var(--section-padding);
+		background-color: var(--color-ivory);
+	}
+
+	.calligraphy-inner {
+		max-width: var(--max-content);
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: clamp(2rem, 5vw, 5rem);
+		align-items: start;
+	}
+
+	.section-label {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.label-line {
+		width: 40px;
+		height: 1px;
+		background-color: var(--color-walnut);
+	}
+
+	.label-text {
+		font-family: var(--font-body);
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		color: var(--color-text-light);
+	}
+
+	h2 {
+		font-size: clamp(2rem, 4vw, 3rem);
+		margin: 0.5rem 0 1.5rem;
+	}
+
+	.calligraphy-intro {
+		font-size: 0.95rem;
+		line-height: 1.8;
+		color: var(--color-text);
+		margin: 0;
+	}
+
+	.calligraphy-image img {
+		width: 100%;
+		height: 450px;
+		object-fit: cover;
+		border-radius: 2px;
+	}
+
+	/* Feature cards row */
+	.features-row {
+		max-width: var(--max-content);
+		margin: 3rem auto 0;
+		padding-top: 3rem;
+		border-top: 1px solid rgba(92, 64, 51, 0.12);
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+	}
+
+	.feature-card {
+		text-align: center;
+		padding: 2rem 1.5rem;
+		background-color: var(--color-ivory-dark);
+		border-radius: 2px;
+		transition: transform var(--transition-base), box-shadow var(--transition-base);
+	}
+
+	.feature-card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 8px 30px rgba(92, 64, 51, 0.08);
+	}
+
+	.feature-icon {
+		width: 48px;
+		height: 48px;
+		margin: 0 auto 1.25rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid rgba(92, 64, 51, 0.2);
+		border-radius: 50%;
+		padding: 10px;
+		color: var(--color-walnut);
+	}
+
+	.feature-icon svg {
+		width: 100%;
+		height: 100%;
+	}
+
+	.feature-card h3 {
+		font-family: var(--font-heading);
+		font-size: 1.2rem;
+		font-weight: 500;
+		color: var(--color-walnut);
+		margin: 0 0 0.5rem;
+	}
+
+	.feature-card p {
+		font-size: 0.85rem;
+		line-height: 1.6;
+		color: var(--color-text-light);
+		margin: 0;
+	}
+
+	@media (max-width: 768px) {
+		.calligraphy-inner {
+			grid-template-columns: 1fr;
+		}
+
+		.calligraphy-text {
+			order: 1;
+		}
+
+		.calligraphy-image {
+			order: 2;
+		}
+
+		.calligraphy-image img {
+			height: 300px;
+		}
+
+		.features-row {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+	}
+</style>
