@@ -17,22 +17,22 @@
 		</div>
 	</div>
 
-	<div class="about-stats fade-in">
-		<div class="stat">
-			<span class="stat-value" data-i18n="about.stat1value">10+</span>
-			<span class="stat-label" data-i18n="about.stat1label">Years in Sales & Business Development</span>
+	<div class="about-details fade-in">
+		<div class="detail">
+			<h3 class="detail-title" data-i18n="about.stat1title">Experience</h3>
+			<p class="detail-text" data-i18n="about.stat1text">10+ years in international sales & business development across Hong Kong, Paris, Spain & The Netherlands</p>
 		</div>
-		<div class="stat">
-			<span class="stat-value" data-i18n="about.stat2value">4</span>
-			<span class="stat-label" data-i18n="about.stat2label">Countries Lived & Worked</span>
+		<div class="detail">
+			<h3 class="detail-title" data-i18n="about.stat2title">Education</h3>
+			<p class="detail-text" data-i18n="about.stat2text">BSc in Business & Languages, MSc in International Relations & Diplomacy. Previous city council member</p>
 		</div>
-		<div class="stat">
-			<span class="stat-value" data-i18n="about.stat3value">MSc</span>
-			<span class="stat-label" data-i18n="about.stat3label">International Relations & Diplomacy</span>
+		<div class="detail">
+			<h3 class="detail-title" data-i18n="about.stat3title">Languages</h3>
+			<p class="detail-text" data-i18n="about.stat3text">Dutch, English, French & Spanish</p>
 		</div>
-		<div class="stat">
-			<span class="stat-value" data-i18n="about.stat4value">2</span>
-			<span class="stat-label" data-i18n="about.stat4label">Languages besides Dutch & English</span>
+		<div class="detail">
+			<h3 class="detail-title" data-i18n="about.stat4title">Heritage</h3>
+			<p class="detail-text" data-i18n="about.stat4text">Half Tanzanian, half Dutch — a multicultural identity shaped by many worlds</p>
 		</div>
 	</div>
 
@@ -107,8 +107,8 @@
 		margin: 0;
 	}
 
-	/* Stats row */
-	.about-stats {
+	/* Details grid */
+	.about-details {
 		max-width: var(--max-content);
 		margin: 3rem auto 0;
 		display: grid;
@@ -118,26 +118,24 @@
 		border-top: 1px solid rgba(92, 64, 51, 0.12);
 	}
 
-	.stat {
-		text-align: center;
+	.detail {
+		padding: 0 0.5rem;
 	}
 
-	.stat-value {
-		display: block;
+	.detail-title {
 		font-family: var(--font-heading);
-		font-size: clamp(2rem, 3vw, 2.75rem);
+		font-size: 1.1rem;
 		font-weight: 500;
 		color: var(--color-walnut);
-		line-height: 1.1;
-		margin-bottom: 0.5rem;
+		margin: 0 0 0.5rem;
+		letter-spacing: 0.02em;
 	}
 
-	.stat-label {
-		display: block;
-		font-size: 0.8rem;
+	.detail-text {
+		font-size: 0.82rem;
 		color: var(--color-text-light);
-		line-height: 1.4;
-		letter-spacing: 0.02em;
+		line-height: 1.65;
+		margin: 0;
 	}
 
 	/* Pull-quote */
@@ -187,14 +185,14 @@
 			height: 350px;
 		}
 
-		.about-stats {
+		.about-details {
 			grid-template-columns: repeat(2, 1fr);
 			gap: 1.5rem;
 		}
 	}
 
 	@media (max-width: 480px) {
-		.about-stats {
+		.about-details {
 			grid-template-columns: 1fr;
 		}
 	}

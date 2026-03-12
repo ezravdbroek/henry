@@ -17,7 +17,8 @@
       "Bash(grep -o 'form-group[^}]*select[^}]*}' C:/Users/shaba/Desktop/projecten/henry/dist/_astro/*.css | head -5)",
       "Bash(grep -oP '.{0,30}form-row.{0,100}' C:/Users/shaba/Desktop/projecten/henry/dist/_astro/*.css)",
       "Bash(grep -o '.\\\\{0,50\\\\}form-row.\\\\{0,100\\\\}' C:/Users/shaba/Desktop/projecten/henry/dist/_astro/*.css)",
-      "Bash(grep -o '.\\\\{0,30\\\\}gallery-grid.\\\\{0,100\\\\}' C:/Users/shaba/Desktop/projecten/henry/dist/_astro/*.css)"
+      "Bash(grep -o '.\\\\{0,30\\\\}gallery-grid.\\\\{0,100\\\\}' C:/Users/shaba/Desktop/projecten/henry/dist/_astro/*.css)",
+      "Bash(python3 << 'EOF'\nimport json\nimport sys\n\n# Read the JSONL file line by line looking for briefing content\nwith open\\(\"C:/Users/shaba/.claude/projects/C--Users-shaba-Desktop-projecten-henry/a3a99598-0e07-4ef1-a0c1-f29c713c1f15.jsonl\", \"r\"\\) as f:\n    for i, line in enumerate\\(f\\):\n        try:\n            data = json.loads\\(line\\)\n            if isinstance\\(data, dict\\) and \"message\" in data:\n                msg = data.get\\(\"message\", {}\\)\n                if isinstance\\(msg, dict\\):\n                    content = msg.get\\(\"content\", \"\"\\)\n                    if isinstance\\(content, str\\) and \\(\"briefing\" in content.lower\\(\\) or \"French\" in content or \"Spanish\" in content or \"Indonesian\" in content or \"Suriname\" in content\\):\n                        print\\(f\"Line {i}:\"\\)\n                        print\\(content[:2000]\\)\n                        print\\(\"\\\\n---\\\\n\"\\)\n        except:\n            pass\n        \n        if i > 100:  # Check first 100 lines\n            break\nEOF)"
     ]
   }
 }
