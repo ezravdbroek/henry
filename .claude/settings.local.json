@@ -10,7 +10,14 @@
       "Bash(cd C:/Users/shaba/Desktop/projecten/henry && npm run dev)",
       "Bash(cd \"C:\\\\Users\\\\shaba\\\\Desktop\\\\projecten\\\\henry\" && npm run build 2>&1)",
       "WebFetch(domain:localhost)",
-      "Bash(cd \"C:\\\\Users\\\\shaba\\\\Desktop\\\\projecten\\\\henry\" && npm run build 2>&1 && cat dist/index.html)"
+      "Bash(cd \"C:\\\\Users\\\\shaba\\\\Desktop\\\\projecten\\\\henry\" && npm run build 2>&1 && cat dist/index.html)",
+      "Bash(npm run:*)",
+      "Bash(grep -o 'form-row[^}]*}' C:/Users/shaba/Desktop/projecten/henry/dist/_astro/*.css | head -5)",
+      "Bash(grep -o 'form-group select[^}]*}' C:/Users/shaba/Desktop/projecten/henry/dist/_astro/*.css | head -5)",
+      "Bash(grep -o 'form-group[^}]*select[^}]*}' C:/Users/shaba/Desktop/projecten/henry/dist/_astro/*.css | head -5)",
+      "Bash(grep -oP '.{0,30}form-row.{0,100}' C:/Users/shaba/Desktop/projecten/henry/dist/_astro/*.css)",
+      "Bash(grep -o '.\\\\{0,50\\\\}form-row.\\\\{0,100\\\\}' C:/Users/shaba/Desktop/projecten/henry/dist/_astro/*.css)",
+      "Bash(grep -o '.\\\\{0,30\\\\}gallery-grid.\\\\{0,100\\\\}' C:/Users/shaba/Desktop/projecten/henry/dist/_astro/*.css)"
     ]
   }
 }
