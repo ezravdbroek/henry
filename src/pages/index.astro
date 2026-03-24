@@ -1,20 +1,169 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Services from '../components/Services.astro';
-import Calligraphy from '../components/Calligraphy.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
 ---
 
 <Layout>
-	<Navbar />
-	<Hero />
-	<About />
-	<Services />
-	<Calligraphy />
-	<Contact />
-	<Footer />
+	<main class="coming-soon">
+		<div class="content">
+			<img src="/henry-logo.png" alt="Henry Calligraphy" class="logo" />
+
+			<div class="divider"></div>
+
+			<h2 class="section-title">ABOUT ME</h2>
+
+			<div class="about-text">
+				<p>My name is Isha Henry-Hament. I'm 31 years old and a professional calligrapher based in Breda, the Netherlands. The name "Henry Calligraphy" is inspired by our little family name.</p>
+
+				<p>I'm a mother of two and a former politician who is combining her corporate job with her passion for lettering. I hold a Bachelor's degree in Business and Languages, as well as a Master's in International Relations and Diplomacy.</p>
+
+				<p>I previously served as a city council member and bring over 10 years of experience in sales and business development, having lived and worked in Hong Kong, Paris, Spain, and The Netherlands.</p>
+
+				<p>With a Tanzanian and Dutch background, I identify as multicultural—shaped by different places, perspectives, and experiences. The consistent thread throughout my life? The belief that words matter; your message matters, and how you convey it matters just as much.</p>
+
+				<p>As AI and digitalisation continue to reshape our world, there is a growing appreciation for the authenticity of craftsmanship.</p>
+
+				<p>I practice copperplate calligraphy and I am passionate about sharing the beauty of bespoke calligraphy with the world. A true luxury!</p>
+			</div>
+
+			<div class="cta">
+				<p class="cta-heading">FULL SERVICES AND PORTFOLIO ONLINE SOON</p>
+				<p class="cta-contact">Isha Henry-Hament | Calligrapher | info@henrycalligraphy.com</p>
+				<a href="https://www.instagram.com/henrycalligraphy/" target="_blank" rel="noopener noreferrer" class="instagram">
+					<svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<defs>
+							<linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
+								<stop offset="0%" stop-color="#FEDA75"/>
+								<stop offset="25%" stop-color="#FA7E1E"/>
+								<stop offset="50%" stop-color="#D62976"/>
+								<stop offset="75%" stop-color="#962FBF"/>
+								<stop offset="100%" stop-color="#4F5BD5"/>
+							</linearGradient>
+						</defs>
+						<rect x="1.5" y="1.5" width="21" height="21" rx="5.5" ry="5.5" fill="none" stroke="url(#ig)" stroke-width="2"/>
+						<circle cx="12" cy="12" r="4.5" fill="none" stroke="url(#ig)" stroke-width="1.8"/>
+						<circle cx="17.8" cy="6.2" r="1.3" fill="url(#ig)"/>
+					</svg>
+					<span>@henrycalligraphy</span>
+				</a>
+			</div>
+		</div>
+	</main>
 </Layout>
+
+<style>
+	.coming-soon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 100dvh;
+		padding: 3rem 1.5rem;
+		background-color: #ebe4d8;
+		background-image: url("/linen-texture.png");
+	}
+
+	.content {
+		max-width: 680px;
+		width: 100%;
+		text-align: center;
+	}
+
+	.logo {
+		width: min(280px, 60vw);
+		height: auto;
+		margin: 0 auto 2rem;
+		display: block;
+		mix-blend-mode: multiply;
+	}
+
+	.divider {
+		width: 60px;
+		height: 1px;
+		background: var(--color-walnut, #5C4033);
+		margin: 0 auto 2rem;
+		opacity: 0.4;
+	}
+
+	.section-title {
+		font-family: 'Lora', serif;
+		font-size: 0.85rem;
+		font-weight: 500;
+		letter-spacing: 0.25em;
+		color: #3a2a1e;
+		margin-bottom: 1.5rem;
+	}
+
+	.about-text {
+		font-family: 'Lora', serif;
+		font-size: 0.875rem;
+		line-height: 1.8;
+		color: #4a3828;
+		margin-bottom: 2.5rem;
+	}
+
+	.about-text p {
+		margin-bottom: 1rem;
+	}
+
+	.about-text p:last-child {
+		margin-bottom: 0;
+	}
+
+	.cta {
+		border-top: 1px solid rgba(92, 64, 51, 0.2);
+		padding-top: 2rem;
+	}
+
+	.cta-heading {
+		font-family: 'Lora', serif;
+		font-size: 0.8rem;
+		font-weight: 600;
+		letter-spacing: 0.2em;
+		color: #3a2a1e;
+		margin-bottom: 0.75rem;
+	}
+
+	.cta-contact {
+		font-family: 'Lora', serif;
+		font-size: 0.8rem;
+		color: #4a3828;
+		margin-bottom: 1rem;
+	}
+
+	.instagram {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: #3a2a1e;
+		text-decoration: none;
+		font-family: 'Lora', serif;
+		font-size: 0.85rem;
+		transition: opacity 0.2s;
+	}
+
+	.instagram:hover {
+		opacity: 0.7;
+	}
+
+	@media (max-width: 480px) {
+		.coming-soon {
+			padding: 2rem 1.25rem;
+		}
+
+		.logo {
+			width: min(220px, 55vw);
+		}
+
+		.about-text {
+			font-size: 0.8125rem;
+			line-height: 1.75;
+		}
+
+		.cta-heading {
+			font-size: 0.75rem;
+		}
+
+		.cta-contact {
+			font-size: 0.75rem;
+		}
+	}
+</style>
