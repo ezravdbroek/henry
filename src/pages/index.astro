@@ -5,27 +5,27 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
 	<main class="coming-soon">
 		<div class="content">
-			<img src="/henry-logo.png" alt="Henry Calligraphy" class="logo" />
+			<img src="/henry-logo.png" alt="Henry Calligraphy" class="logo anim" />
 
-			<div class="divider"></div>
+			<div class="divider anim"></div>
 
-			<h2 class="section-title">ABOUT ME</h2>
+			<h2 class="section-title anim">ABOUT ME</h2>
 
 			<div class="about-text">
-				<p>My name is Isha Henry-Hament. I'm 31 years old and a professional calligrapher based in Breda, the Netherlands. The name "Henry Calligraphy" is inspired by our little family name.</p>
+				<p class="anim">My name is Isha Henry-Hament. I'm 31 years old and a professional calligrapher based in Breda, the Netherlands. The name "Henry Calligraphy" is inspired by our little family name.</p>
 
-				<p>I'm a mother of two and a former politician who is combining her corporate job with her passion for lettering. I hold a Bachelor's degree in Business and Languages, as well as a Master's in International Relations and Diplomacy.</p>
+				<p class="anim">I'm a mother of two and a former politician who is combining her corporate job with her passion for lettering. I hold a Bachelor's degree in Business and Languages, as well as a Master's in International Relations and Diplomacy.</p>
 
-				<p>I previously served as a city council member and bring over 10 years of experience in sales and business development, having lived and worked in Hong Kong, Paris, Spain, and The Netherlands.</p>
+				<p class="anim">I previously served as a city council member and bring over 10 years of experience in sales and business development, having lived and worked in Hong Kong, Paris, Spain, and The Netherlands.</p>
 
-				<p>With a Tanzanian and Dutch background, I identify as multicultural—shaped by different places, perspectives, and experiences. The consistent thread throughout my life? The belief that words matter; your message matters, and how you convey it matters just as much.</p>
+				<p class="anim">With a Tanzanian and Dutch background, I identify as multicultural—shaped by different places, perspectives, and experiences. The consistent thread throughout my life? The belief that words matter; your message matters, and how you convey it matters just as much.</p>
 
-				<p>As AI and digitalisation continue to reshape our world, there is a growing appreciation for the authenticity of craftsmanship.</p>
+				<p class="anim">As AI and digitalisation continue to reshape our world, there is a growing appreciation for the authenticity of craftsmanship.</p>
 
-				<p>I practice copperplate calligraphy and I am passionate about sharing the beauty of bespoke calligraphy with the world. A true luxury!</p>
+				<p class="anim">I practice copperplate calligraphy and I am passionate about sharing the beauty of bespoke calligraphy with the world. A true luxury!</p>
 			</div>
 
-			<div class="cta">
+			<div class="cta anim">
 				<p class="cta-heading">FULL SERVICES AND PORTFOLIO ONLINE SOON</p>
 				<p class="cta-contact">Isha Henry-Hament | Calligrapher | info@henrycalligraphy.com</p>
 				<a href="https://www.instagram.com/henrycalligraphy/" target="_blank" rel="noopener noreferrer" class="instagram">
@@ -50,6 +50,26 @@ import Layout from '../layouts/Layout.astro';
 	</main>
 </Layout>
 
+<script is:inline>
+	(function() {
+		function runAnimations() {
+			var elements = document.querySelectorAll('.anim');
+			for (var i = 0; i < elements.length; i++) {
+				(function(el, index) {
+					setTimeout(function() {
+						el.classList.add('visible');
+					}, 300 + index * 150);
+				})(elements[i], i);
+			}
+		}
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', runAnimations);
+		} else {
+			runAnimations();
+		}
+	})();
+</script>
+
 <style>
 	.coming-soon {
 		display: flex;
@@ -59,12 +79,26 @@ import Layout from '../layouts/Layout.astro';
 		padding: 3rem 1.5rem;
 		background-color: #ebe4d8;
 		background-image: url("/linen-texture.png");
+		background-size: 120px;
+		background-blend-mode: overlay;
 	}
 
 	.content {
 		max-width: 680px;
 		width: 100%;
 		text-align: center;
+	}
+
+	.anim {
+		opacity: 0;
+		transform: translateY(18px);
+		transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+					transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	}
+
+	.anim.visible {
+		opacity: 1;
+		transform: translateY(0);
 	}
 
 	.logo {
@@ -75,12 +109,27 @@ import Layout from '../layouts/Layout.astro';
 		mix-blend-mode: multiply;
 	}
 
+	.logo.anim {
+		transform: translateY(18px) scale(0.95);
+	}
+
+	.logo.anim.visible {
+		transform: translateY(0) scale(1);
+	}
+
 	.divider {
 		width: 60px;
 		height: 1px;
 		background: var(--color-walnut, #5C4033);
 		margin: 0 auto 2rem;
+		opacity: 0;
+		transform: scaleX(0);
+		transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	}
+
+	.divider.visible {
 		opacity: 0.4;
+		transform: scaleX(1);
 	}
 
 	.section-title {
@@ -137,7 +186,7 @@ import Layout from '../layouts/Layout.astro';
 		text-decoration: none;
 		font-family: 'Lora', serif;
 		font-size: 0.85rem;
-		transition: opacity 0.2s;
+		transition: opacity 0.3s ease;
 	}
 
 	.instagram:hover {
